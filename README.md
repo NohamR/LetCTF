@@ -5,9 +5,13 @@ A Python tool to automatically generate CTF writeup templates and organize chall
 ### Supported CTF Websites :
 - https://hackropole.fr
 - https://theblackside.fr
+- https://crackmes.one
 
 ### Will add :
 - https://imaginaryctf.org
+- https://challenges.ecsc.eu/challenges
+- https://www.root-me.org
+- https://www.hackthissite.org
 
 ## Features
 

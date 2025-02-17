@@ -202,12 +202,12 @@ class TheBlackSidePlatform(CTFPlatform):
 
         main_content = textwrap.dedent(
         f"""\
+        - Challenge URL: [{challenge.name} - {challenge.platform}]({challenge.url})
         - Author: {challenge.author}
         - Category: {challenge.category}
         - Challenge description: {challenge.description}
         - Points: {challenge.points}
         - Solved by: {challenge.solved_number} users
-        - Challenge URL: [{challenge.name} - {challenge.platform}]({challenge.url})
         - Files provided: {files_section}
 
         ## Writeup 
@@ -216,12 +216,12 @@ class TheBlackSidePlatform(CTFPlatform):
 
         main_content_fr = textwrap.dedent(
         f"""\
+        - URL du challenge: [{challenge.name} - {challenge.platform}]({challenge.url})
         - Auteur: {challenge.author}
         - Catégorie: {challenge.category}
         - Description du challenge: {challenge.description}
         - Points: {challenge.points}
         - Résolu par: {challenge.solved_number} utilisateurs
-        - URL du challenge: [{challenge.name} - {challenge.platform}]({challenge.url})
         - Fichiers fournis: {files_section}
 
         ## Writeup

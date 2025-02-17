@@ -164,7 +164,7 @@ class HackropolePlatform(CTFPlatform):
     def generate_template(self, challenge: Challenge, hugo_header: bool = False, translated: bool = False):
         """Generate writeup template for challenge"""
 
-        all_tags = list(set([challenge.category] + challenge.additional_info["badges"])) # Remove duplicates
+        all_tags = list(set([challenge.category] + "Hackropole" + challenge.additional_info["badges"])) # Remove duplicates
         tags_str = '", "'.join(all_tags)
 
         hugo_header_template = textwrap.dedent(
@@ -233,11 +233,11 @@ class HackropolePlatform(CTFPlatform):
 
         main_content = textwrap.dedent(
         f"""\
+        - Challenge URL: [{challenge.name} - {challenge.platform}]({challenge.url})
         - Author: {challenge.author}
         - Category: {challenge.category}
         - Challenge description: {challenge.description}
         - Difficulty: {stars} ({challenge.difficulty if challenge.difficulty > 0 else 1}/5)
-        - Challenge URL: [{challenge.name} - {challenge.platform}]({challenge.url})
         - Files provided: {files_section}
 
         ## Writeup 
@@ -246,11 +246,11 @@ class HackropolePlatform(CTFPlatform):
 
         main_content_fr = textwrap.dedent(
         f"""\
+        - URL du challenge: [{challenge.name} - {challenge.platform}]({challenge.url})
         - Auteur: {challenge.author}
         - Catégorie: {challenge.category}
         - Description du challenge: {challenge.description}
         - Difficulté: {stars} ({challenge.difficulty if challenge.difficulty > 0 else 1}/5)
-        - URL du challenge: [{challenge.name} - {challenge.platform}]({challenge.url})
         - Fichiers fournis: {files_section}
 
         ## Writeup
