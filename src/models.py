@@ -16,6 +16,7 @@ class Challenge:
     additional_info: Dict = None
     template: str = None
     template_translated: str = None
+    solved_number: int = 0
 
 @dataclass
 class File:

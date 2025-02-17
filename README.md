@@ -4,10 +4,10 @@ A Python tool to automatically generate CTF writeup templates and organize chall
 
 ### Supported CTF Websites :
 - https://hackropole.fr
+- https://theblackside.fr
 
 ### Will add :
 - https://imaginaryctf.org
-- https://theblackside.fr
 
 ## Features
 
