@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import List, Dict
+from typing import List, Dict, Optional
 
 @dataclass
 class Challenge:
@@ -10,13 +10,13 @@ class Challenge:
     author: str
     category: str
     description: str
-    difficulty: str
-    points: int
     files: List[str]
+    difficulty: Optional[int] = None
+    points: Optional[int] = None
     additional_info: Dict = None
     template: str = None
     template_translated: str = None
-    solved_number: int = 0
+    solved_number: Optional[int] = 0
 
 @dataclass
 class File:
