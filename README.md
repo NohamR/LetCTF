@@ -7,9 +7,9 @@ A Python tool to automatically generate CTF writeup templates and organize chall
 - https://theblackside.fr
 - https://crackmes.one
 - https://crackmy.app
+- https://cattheflag.org/defis.php
 
 ### Will add :
-- https://cattheflag.org/defis.php
 - https://imaginaryctf.org
 - https://challenges.ecsc.eu/challenges
 - https://www.root-me.org
