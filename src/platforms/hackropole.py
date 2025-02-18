@@ -12,9 +12,7 @@ import textwrap
 
 
 class HackropolePlatform(CTFPlatform):
-    def __init__(
-        self, url: str = "https://hackropole.fr", config_file: str | Path = None
-    ):
+    def __init__(self, url: str = "https://hackropole.fr", config_file: str | Path = None):
         super().__init__(url)
         if config_file:
             self.load_config(config_file)

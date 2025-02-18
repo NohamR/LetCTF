@@ -8,7 +8,7 @@ class WriteupGenerator:
     def __init__(self, platform: CTFPlatform, output_dir: Path):
         self.platform = platform
         self.output_dir = output_dir
-        self.challenges = []
+        self.challenges = {}
 
     def fetch_challenges(self):
         """Fetch all challenges from the platform"""
@@ -27,6 +27,10 @@ class WriteupGenerator:
             platform_dir.mkdir(parents=True, exist_ok=True)
 
             challenge_dir = platform_dir / self._sanitize_filename(challenge.id)
+            if challenge_dir.exists():
+                print(f"Challenge directory for {challenge.id} already exists. Skipping...")
+                continue
+
             challenge_dir.mkdir(exist_ok=True)
 
             files_dir = challenge_dir / "files"
@@ -35,18 +39,11 @@ class WriteupGenerator:
 
             self.platform.generate_template(challenge, hugo_header, translated)
 
-            if (challenge_dir / "index.md").exists():
-                print(f"Writeup for {challenge.id} already exists. Skipping...")
-                continue
-            else:
-                (challenge_dir / "index.md").write_text(challenge.template)
+            (challenge_dir / "index.md").write_text(challenge.template)
 
             if translated:
-                if (challenge_dir / "index.fr.md").exists():
-                    print(f"Writeup for {challenge.id} already exists. Skipping...")
-                    continue
-                else:
-                    (challenge_dir / "index.fr.md").write_text(challenge.template_translated)
+                (challenge_dir / "index.fr.md").write_text(challenge.template_translated)
+            print(f"Writeup for {challenge.id} has been generated in {challenge_dir}")
 
 
     @staticmethod
