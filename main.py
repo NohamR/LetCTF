@@ -19,7 +19,7 @@ def hackropole():
 
 def theblackside():
     challenge_url = 'https://theblackside.fr/challenges/steganographie/Meow'
-    platform = TheBlackSidePlatform(cookies_file="theblackside.cookies.json")
+    platform = TheBlackSidePlatform(cookies_file="./config/theblackside.cookies.json")
     
     generator = WriteupGenerator(platform, Path("./writeups"))
     generator.fetch_challenge(challenge_url=challenge_url)
@@ -36,7 +36,7 @@ def crackmes():
 
 def crackmy():
     challenge_url = 'https://crackmy.app/crackmes/yet-another-packer-v1-5514'
-    # platform = CrackmyPlatform(config_file="crackmy.json")
+    # platform = CrackmyPlatform(config_file="./config/crackmy.json")
     platform = CrackmyPlatform()
 
     generator = WriteupGenerator(platform, Path("./writeups"))
@@ -46,7 +46,7 @@ def crackmy():
 
 def cattheflag():
     challenge_url = 'https://cattheflag.org/defis/reverse2.php'
-    platform = CatTheFlagPlatform(config_file="catthefile.json")
+    platform = CatTheFlagPlatform(config_file="./config/catthefile.json")
 
     generator = WriteupGenerator(platform, Path("./writeups"))
     generator.fetch_challenges() # Mandatory to get every information about a specific challenge for this platform
@@ -67,7 +67,7 @@ def imaginaryctf():
 
 def rootme():
     challenge_url = 'https://www.root-me.org/fr/Challenges/Cracking/ELF-x86-0-protection'
-    platform = RootMePlatform(config_file="rootme.json")
+    platform = RootMePlatform(config_file="./config/rootme.json")
 
     generator = WriteupGenerator(platform, Path("./writeups"))
     generator.fetch_challenge(challenge_url=challenge_url)
@@ -80,4 +80,4 @@ def rootme():
 # crackmy()
 # cattheflag()
 # imaginaryctf()
-rootme()
+# rootme()
