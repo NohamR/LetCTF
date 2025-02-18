@@ -4,6 +4,7 @@ from src.platforms.crackmes import CrackmesPlatform
 from src.platforms.crackmy import CrackmyPlatform
 from src.platforms.cattheflag import CatTheFlagPlatform
 from src.platforms.imaginaryctf import ImaginaryCTFPlatform
+from src.platforms.rootme import RootMePlatform
 from src.generator import WriteupGenerator
 from pathlib import Path
 
@@ -54,12 +55,21 @@ def cattheflag():
     generator.generate_writeup_structure(hugo_header=True, translated=True)
 
 def imaginaryctf():
-    challenge_name = "Prime Cuts"
+    challenge_name = "Wrong ssh"
     challenge_url = challenge_name.lower().replace(' ', '-')
     platform = ImaginaryCTFPlatform()
 
     generator = WriteupGenerator(platform, Path("./writeups"))
     generator.fetch_challenges()
+    generator.fetch_challenge(challenge_url=challenge_url)
+    print(generator.challenges)
+    generator.generate_writeup_structure(hugo_header=True, translated=True)
+
+def rootme():
+    challenge_url = 'https://www.root-me.org/fr/Challenges/Cracking/ELF-x86-0-protection'
+    platform = RootMePlatform(config_file="rootme.json")
+
+    generator = WriteupGenerator(platform, Path("./writeups"))
     generator.fetch_challenge(challenge_url=challenge_url)
     print(generator.challenges)
     generator.generate_writeup_structure(hugo_header=True, translated=True)
@@ -70,3 +80,4 @@ def imaginaryctf():
 # crackmy()
 # cattheflag()
 # imaginaryctf()
+rootme()

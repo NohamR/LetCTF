@@ -162,7 +162,7 @@ class HackropolePlatform(CTFPlatform):
     def generate_template(self, challenge: Challenge, hugo_header: bool = False, translated: bool = False):
         """Generate writeup template for challenge"""
 
-        all_tags = list(set([challenge.category] + "Hackropole" + challenge.additional_info["badges"])) # Remove duplicates
+        all_tags = list(set([challenge.category] + [challenge.platform] + challenge.additional_info["badges"])) # Remove duplicates
         tags_str = '", "'.join(all_tags)
 
         hugo_header_template = textwrap.dedent(

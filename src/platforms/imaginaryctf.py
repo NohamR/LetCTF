@@ -30,6 +30,7 @@ class ImaginaryCTFPlatform(CTFPlatform):
             'sec-ch-ua-mobile': '?0',
             'sec-ch-ua-platform': '"macOS"',
         }
+        
     def login(self) -> bool:
         """Not implementing login since we don't need it :D"""
         return True
@@ -153,7 +154,7 @@ class ImaginaryCTFPlatform(CTFPlatform):
     def generate_tags(self, challenge):
         tags = []
         tags.append(challenge.category)
-        tags.append("ImaginaryCTF")
+        tags.append(challenge.platform)
         tags = list(set(filter(None, tags)))
         tags_str = '", "'.join(tags)
         return tags_str

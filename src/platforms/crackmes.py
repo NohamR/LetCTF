@@ -146,7 +146,7 @@ class CrackmesPlatform(CTFPlatform):
     def generate_tags(self, challenge):
         tags = []
         tags.append(challenge.category)
-        tags.append("Crackmes")
+        tags.append(challenge.platform)
         if challenge.additional_info["platform"]:
             tags.append(challenge.additional_info["platform"])
         if challenge.additional_info["language"]:

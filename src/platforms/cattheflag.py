@@ -158,7 +158,7 @@ class CatTheFlagPlatform(CTFPlatform):
     def generate_tags(self, challenge):
         tags = []
         tags.append(challenge.category)
-        tags.append("CatTheFlag")
+        tags.append(challenge.platform)
         tags = list(set(filter(None, tags)))
         tags_str = '", "'.join(tags)
         return tags_str
