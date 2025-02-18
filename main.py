@@ -5,6 +5,7 @@ from src.platforms.crackmy import CrackmyPlatform
 from src.platforms.cattheflag import CatTheFlagPlatform
 from src.platforms.imaginaryctf import ImaginaryCTFPlatform
 from src.platforms.rootme import RootMePlatform
+from src.platforms.ecsc import ECSCPlatform
 from src.generator import WriteupGenerator
 from pathlib import Path
 
@@ -23,6 +24,7 @@ def theblackside():
     
     generator = WriteupGenerator(platform, Path("./writeups"))
     generator.fetch_challenge(challenge_url=challenge_url)
+    print(generator.challenges)
     generator.generate_writeup_structure(hugo_header=True, translated=True)
 
 def crackmes():
@@ -74,6 +76,15 @@ def rootme():
     print(generator.challenges)
     generator.generate_writeup_structure(hugo_header=True, translated=True)
 
+def ecsc():
+    challenge_url = 'https://challenges.ecsc.eu/challenges/binary'
+    platform = ECSCPlatform()
+
+    generator = WriteupGenerator(platform, Path("./writeups"))
+    generator.fetch_challenge(challenge_url=challenge_url)
+    print(generator.challenges)
+    generator.generate_writeup_structure(hugo_header=True, translated=True)
+
 # theblackside()
 # hackropole()
 # crackmes()
@@ -81,3 +92,4 @@ def rootme():
 # cattheflag()
 # imaginaryctf()
 # rootme()
+# ecsc()

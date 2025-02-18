@@ -21,5 +21,5 @@ class Challenge:
 @dataclass
 class File:
     name: str
-    hash: str
     url: str
+    hash: Optional[str] = None

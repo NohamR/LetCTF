@@ -10,10 +10,13 @@ A Python tool to automatically generate CTF writeup templates and organize chall
 - https://cattheflag.org/defis.php
 - https://imaginaryctf.org
 - https://www.root-me.org
+- https://challenges.ecsc.eu/challenges
 
 ### Will consider adding :
-- https://challenges.ecsc.eu/challenges
 - https://www.hackthissite.org
+
+### To do :
+- Add stars number of [crackmes.one](https://crackmes.one) (down for now :/)
 
 ## Features
 
