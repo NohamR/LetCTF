@@ -3,10 +3,8 @@ from pathlib import Path
 import requests
 from .base import CTFPlatform
 from ..models import Challenge, File
-from ..utils.config_handler import load_config
 from ..utils.challenge_handler import download_files
 from bs4 import BeautifulSoup
-import unicodedata
 from datetime import datetime
 import textwrap
 import re

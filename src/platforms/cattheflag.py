@@ -5,12 +5,10 @@ from ..models import Challenge, File
 from ..utils.config_handler import load_config
 from ..utils.challenge_handler import download_files
 from bs4 import BeautifulSoup
-import unicodedata
 from datetime import datetime
 import textwrap
 import requests
 import re
-from pprint import pprint
 
 class CatTheFlagPlatform(CTFPlatform):
     def __init__(self, url: str = "https://cattheflag.org", config_file: str | Path = None):

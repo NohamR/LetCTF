@@ -6,7 +6,6 @@ from ..models import Challenge, File
 from ..utils.cookie_handler import load_cookies_from_file
 from ..utils.challenge_handler import download_files
 from bs4 import BeautifulSoup
-import unicodedata
 from datetime import datetime
 import textwrap
 import re
