@@ -41,6 +41,7 @@ class TheBlackSidePlatform(CTFPlatform):
     def login(self) -> bool:
         """
         Not implementing traditional login as we're using cookies
+        Login is protected using Google reCAPTCHA..
         Returns True if we can access authenticated endpoints
         """
         try:
@@ -51,6 +52,8 @@ class TheBlackSidePlatform(CTFPlatform):
             )
             if "/profil/" in response.text:
                 print("Logged in")
+            else:
+                raise Exception("Failed to login")
         except requests.exceptions.RequestException:
             raise Exception("Failed to login")
         
@@ -192,6 +195,8 @@ class TheBlackSidePlatform(CTFPlatform):
         ---
         """
         )
+
+        stars = "⭐" * min(5, max(1, round(challenge.points / 12)))
         
         files_section = ""
         for file in challenge.files:
@@ -205,7 +210,7 @@ class TheBlackSidePlatform(CTFPlatform):
         - Author: {challenge.author}
         - Category: {challenge.category}
         - Challenge description: {challenge.description}
-        - Points: {challenge.points}
+        - Points: {challenge.points} {stars}
         - Solved by: {challenge.solved_number} users
         - Files provided: {files_section}
 
@@ -219,7 +224,7 @@ class TheBlackSidePlatform(CTFPlatform):
         - Auteur: {challenge.author}
         - Catégorie: {challenge.category}
         - Description du challenge: {challenge.description}
-        - Points: {challenge.points}
+        - Points: {challenge.points} {stars}
         - Résolu par: {challenge.solved_number} utilisateurs
         - Fichiers fournis: {files_section}
 
